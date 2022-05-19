@@ -85,6 +85,18 @@ def comer (ser,comida):
         dibujo(cuerpo,"turtle","blue", 0.5 , 0.5)
         cola.append(cuerpo)
         return 10
+def morir (ser,obstaculos):
+  if (ser.distance(comida)<  20):
+        colicionobstaculos (ser, obstaculos)
+        time.sleep(1)
+        ser.reset()
+        ser.direccion = "stop" 
+        for i in cola :
+            i.hideturtle()
+        cola.clear()
+        return 10
+        
+  
 
 def movercuerpo (ser):
     total= len(cola)
@@ -138,12 +150,10 @@ def colicionobstaculos (ser, obstaculos):
         for i in cola :
           i.hideturtle()
         cola.clear()
+        return 10
+    
     
         
-  
-  
-    
-                  
 titulo.goto(0 , 220)
 titulo.write("jueguinho de la serpiente", align = "center", font = ("arial", 32 , "normal") )        
 titulo.goto(0 , 160)
