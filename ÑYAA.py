@@ -130,6 +130,16 @@ def colicionobstaculos (ser, obstaculos):
   x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
   obstaculos.goto (x , y)
+  if (ser.distance(obstaculos)<  20):
+        colicionobstaculos(ser, obstaculos)
+        time.sleep(1)
+        ser.reset()
+        ser.direccion = "stop" 
+        for i in cola :
+          i.hideturtle()
+        cola.clear()
+    
+        
   
   
     
