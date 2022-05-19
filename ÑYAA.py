@@ -129,14 +129,8 @@ def colicionobstaculos (ser, obstaculos):
   obstaculos.penup()
   x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
-  comida.goto (x , y)
-  time.sleep(1)
-  ser.reset()
-  ser.direccion = "stop" 
-  for i in cola :
-          i.hideturtle()
-  cola.clear()
-  comidarandom(comida)
+  obstaculos.goto (x , y)
+  
   
     
                   
