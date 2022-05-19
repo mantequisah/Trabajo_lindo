@@ -132,16 +132,10 @@ def obstaculosrandom (ser, obstaculos):
   obstaculos.penup()
   x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
- 
-  
-  
   obstaculos.goto (x , y)
   if comer == 0:
-    x= random.randint(-260-20, 260+20)
+      x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
-    
-    
-     
   obstaculos.goto (x , y)
 
 def colicionobstaculos (ser , obstaculos) :
@@ -172,7 +166,7 @@ while True:
     dibujo(comida,"circle", "red", 1.5, 1.5 )
     dibujo(obstaculos,"triangle", "black", 1.5 , 1.5 )  
     
-    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 or colicionobstaculos(ser , obstaculos) == 0 :
+    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 or colicionobstaculos(ser , obstaculos) == :
         if score > high_score :
             high_score = score
         score=0 
