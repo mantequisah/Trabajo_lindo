@@ -85,16 +85,7 @@ def comer (ser,comida):
         dibujo(cuerpo,"turtle","blue", 0.5 , 0.5)
         cola.append(cuerpo)
         return 10
-def morir (ser,obstaculos):
-  if (ser.distance(comida)<  20):
-        colicionobstaculos (ser, obstaculos)
-        time.sleep(1)
-        ser.reset()
-        ser.direccion = "stop" 
-        for i in cola :
-            i.hideturtle()
-        cola.clear()
-        return 10
+
         
   
 
@@ -137,22 +128,25 @@ def marcador (texto, scores, high_score):
                 align ="center", font = ("arial", 12, "normal "))
 
 
-def colicionobstaculos (ser, obstaculos):
+def obstaculosrandom (ser, obstaculos):
   obstaculos.penup()
   x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
   obstaculos.goto (x , y)
+  if comer == 0:
+      x= random.randint(-260-20, 260+20)
+  y = random.randint(-260-20, 260+20)
+  obstaculos.goto (x , y)
+
+def colicionobstaculos (ser , obstaculos) :
   if (ser.distance(obstaculos)<  20):
-        colicionobstaculos(ser, obstaculos)
+        obstaculosrandom (ser , obstaculos)
         time.sleep(1)
         ser.reset()
         ser.direccion = "stop" 
-        for i in cola :
-          i.hideturtle()
-        cola.clear()
-        return 10
-    
-    
+        obstaculosrandom (ser, obstaculos)
+        
+      
         
 titulo.goto(0 , 220)
 titulo.write("jueguinho de la serpiente", align = "center", font = ("arial", 32 , "normal") )        
@@ -172,19 +166,13 @@ while True:
     dibujo(comida,"circle", "red", 1.5, 1.5 )
     dibujo(obstaculos,"triangle", "black", 1.5 , 1.5 )  
     
-    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 :
+    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 or colicionobstaculos(ser , obstaculos) == 0 :
         if score > high_score :
             high_score = score
         score=0 
     if comer(ser, comida) == 10:
         score+= 10;
-    if colicionobstaculos (ser, obstaculos) == 0:
-      time.sleep(1)
-      ser.reset()
-      ser.direccion = "stop" 
-      for i in cola :
-          i.hideturtle()
-      cola.clear()
+    
     
       
         
