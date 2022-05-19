@@ -131,7 +131,16 @@ def marcador (texto, scores, high_score):
 def obstaculosrandom (ser, obstaculos):
   obstaculos.penup()
   x= random.randint(-260-20, 260+20)
+  x= random.randint(-260-20, 260+20)
+  x= random.randint(-260-20, 260+20)
+  x= random.randint(-260-20, 260+20)
+  x= random.randint(-260-20, 260+20)
   y = random.randint(-260-20, 260+20)
+  y = random.randint(-260-20, 260+20)
+  y = random.randint(-260-20, 260+20)
+  y = random.randint(-260-20, 260+20)
+  y = random.randint(-260-20, 260+20)
+  
   obstaculos.goto (x , y)
   if comer == 0:
       x= random.randint(-260-20, 260+20)
