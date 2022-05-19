@@ -152,20 +152,20 @@ while True:
     dibujo(comida,"circle", "red", 1.5, 1.5 )
     dibujo(obstaculos,"triangle", "black", 1.5 , 1.5 )  
     
-    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 or colicionobstaculos (ser, obstaculos) == 0  :
+    if colicionbordes(ser, comida) == 0 or colicioncuerpo(ser,comida) == 0 :
         if score > high_score :
             high_score = score
         score=0 
     if comer(ser, comida) == 10:
         score+= 10;
-    if obstaculos == 1:
+    if colicionobstaculos (ser, obstaculos) == 0:
       time.sleep(1)
       ser.reset()
       ser.direccion = "stop" 
       for i in cola :
           i.hideturtle()
       cola.clear()
-      comidarandom(comida)
+    
       
         
     comer(ser,comida)
