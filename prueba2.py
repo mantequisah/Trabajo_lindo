@@ -7,15 +7,18 @@ score= 0
 high_score =0
 
 
-ventana= turtle.Screen()
+ventana = turtle.Screen()
 ventana.title("jueguito")
 ventana.bgcolor("white")
 ventana.setup(width=600, height=600)
 ventana.tracer(0)
+# ventana.bgpic('Rem.gif')
 
 # la wuea que se mueve
 ser=turtle.Turtle()
 ser.direccion = "stop"
+
+# o
 
 # comida
 
